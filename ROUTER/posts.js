@@ -3,6 +3,11 @@
 const express = require("express"); //importiamo express nel nostro file
 const router = express.Router(); //creiamo l'istanza di express router, altrimenti non potremmo usare router nelle CRUD operations
 
+// importiamo i dati utili per le crud operations da DATA (./data/posts.data.js)
+const postsDATA = require("../data/posts.data");
+
+
+
 
 //--------- CRUD OPERATIONS (CREATE "STORE", READ "INDEX/SHOW", UPDATE "UPDATE/MODIFY", DELETE "DESTROY")
 
