@@ -50,37 +50,3 @@ const posts = [
 ];
 
 
-//--------- CRUD OPERATIONS (CREATE "STORE", READ "INDEX/SHOW", UPDATE "UPDATE/MODIFY", DELETE "DESTROY")
-
-
-//INDEX
-app.get("/", (req, res) => { //rotta index 
-    res.send("Welcome on board!")
-});
-
-//SHOW
-app.get("/posts/:id", (req, res) => { //rotta show
-    res.send("Mostrami post con id:" + req.params.id)
-}
-);
-
-//STORE
-app.post("/posts", (req, res) => {
-    res.send("Creazione di un nuovo post")
-});
-
-//UPDATE 
-app.put("/posts/:id", (req, res) => {
-    res.send("Update del post con id" + req.params.id)
-});
-
-//MODIFY (parziale) 
-app.patch("/posts/:id", (req, res) => {
-    res.send("Update del post con id" + req.params.id)
-});
-
-
-//DESTROY
-app.delete("/posts/:id", (req,res) => {
-    res.send("WEEEE LOOOTAAAA STATT ACCORRTT" + req.params.id)
-});
