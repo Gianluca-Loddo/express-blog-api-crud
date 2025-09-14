@@ -4,6 +4,7 @@ const port = 3000; // porta di dialogo per il server
 
 //importiamo le rotte (group routing ./ROUTER/POSTS )
 const postsROUTER = require("./ROUTER/posts");
+
 //diciamo ad express dobbiamo usare le rotte 
 app.use("/posts", postsROUTER);
 

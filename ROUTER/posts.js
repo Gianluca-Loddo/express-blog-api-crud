@@ -6,6 +6,9 @@ const router = express.Router(); //creiamo l'istanza di express router, altrimen
 // importiamo i dati utili per le crud operations da DATA (./data/posts.data.js)
 const postsDATA = require("../data/posts.data");
 
+// importiamo le funzioni delle rotte dal controller
+
+const postsCONTROLER = require("../controllers/posts.controller");
 
 
 
@@ -13,37 +16,26 @@ const postsDATA = require("../data/posts.data");
 
 // DIFFERENZA: RISPETTO ALLE ROTTE DEL MAIN VA SOSTITUITO "APP" con "ROUTER" E "TOLTA LA PARTE STATICA DELLA ROTTA"
 
+// PER LA CREAIONE DEL CONTROLLER la funzione (req, res) viene tolta da qui 
+
 //INDEX
-router.get("/", (req, res) => { //rotta index 
-    res.send("Welcome on board!")
-});
+router.get("/", postsCONTROLER.index);
 
 //SHOW
-router.get("/:id", (req, res) => { //rotta show
-    res.send("Mostrami post con id:" + req.params.id)
-}
-);
+router.get("/:id", postsCONTROLER.show);
 
 //STORE
-router.post("/", (req, res) => {
-    res.send("Creazione di un nuovo post")
-});
+router.post("/", postsCONTROLER.store);
 
 //UPDATE 
-router.put("/:id", (req, res) => {
-    res.send("Update del post con id" + req.params.id)
-});
+router.put("/:id", postsCONTROLER.update);
 
 //MODIFY (parziale) 
-router.patch("/:id", (req, res) => {
-    res.send("Update del post con id" + req.params.id)
-});
+router.patch("/:id", postsCONTROLER.modify);
 
 
 //DESTROY
-router.delete("/:id", (req,res) => {
-    res.send("WEEEE LOOOTAAAA STATT ACCORRTT" + req.params.id)
-});
+router.delete("/:id", postsCONTROLER.destroy);
 
 
 module.exports = router; //esportiamo le rotte affinchè siano richiamabili altrove (ex main.js)
