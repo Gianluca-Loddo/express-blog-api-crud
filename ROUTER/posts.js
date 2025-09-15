@@ -33,7 +33,6 @@ router.put("/:id", postsCONTROLLER.update);
 //MODIFY (parziale) 
 router.patch("/:id", postsCONTROLLER.modify);
 
-
 //DESTROY
 router.delete("/:id", postsCONTROLLER.destroy);
 

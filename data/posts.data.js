@@ -7,35 +7,35 @@ const posts = [
         titolo: "CIAMBELLONE",
         contenuto: "foto del ciambellone",
         immagine: "images/ciambellone.jpeg",
-        tags: [""]
+        tags: ["CLASSICO"]
     },
     {
         id: 2,
         titolo: "CRACKERS ALLA BARBABIETOLA",
         contenuto: "foto dei crackers alla barbabietola",
         immagine: "images/cracker_barbabietola.jpeg",
-        tags: [""]
+        tags: ["VEG"]
     },
     {
         id: 3,
         titolo: "PANE FRITTO DOLCE",
         contenuto: "foto del pane fritto dolce",
         immagine: "images/pane_fritto_dolce.jpeg",
-        tags: [""]
+        tags: ["GUSTOSO"]
     },
     {
         id: 4,
         titolo: "PASTA ALLA BARBABIETOLA",
         contenuto: "foto della pasta alla barbabietola",
         immagine: "images/pasta_barbabietola.jpeg",
-        tags: [""]
+        tags: ["ALTERNATIVA"]
     },
     {
         id: 5,
         titolo: "TORTA PAESANA",
         contenuto: "foto della torta paesana",
         immagine: "images/torta_paesana.jpeg",
-        tags: [""]
+        tags: ["NONNA"]
     }
 ];
 
