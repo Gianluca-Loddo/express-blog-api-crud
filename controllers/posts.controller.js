@@ -20,6 +20,13 @@ const index = (req, res) => {
 const show = (req, res) => {
     const id = parseInt(req.params.id);
     const post = postsDATA.find(item => item.id === id);
+     if (!post) {
+        res.status(404) //404 significato: "pagina non trovata"
+        return res.json({
+            error: "Not Found",
+            message: "Post non trovato, i'm sorry! Re-TRY! :)"
+        })
+    }
     res.json(post);
 };
 
