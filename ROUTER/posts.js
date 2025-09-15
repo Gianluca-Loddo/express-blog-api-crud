@@ -8,7 +8,7 @@ const postsDATA = require("../data/posts.data");
 
 // importiamo le funzioni delle rotte dal controller
 
-const postsCONTROLER = require("../controllers/posts.controller");
+const postsCONTROLLER = require("../controllers/posts.controller");
 
 
 
@@ -19,23 +19,23 @@ const postsCONTROLER = require("../controllers/posts.controller");
 // PER LA CREAIONE DEL CONTROLLER la funzione (req, res) viene tolta da qui 
 
 //INDEX
-router.get("/", postsCONTROLER.index);
+router.get("/", postsCONTROLLER.index);
 
 //SHOW
-router.get("/:id", postsCONTROLER.show);
+router.get("/:id", postsCONTROLLER.show);
 
 //STORE
-router.post("/", postsCONTROLER.store);
+router.post("/", postsCONTROLLER.store);
 
 //UPDATE 
-router.put("/:id", postsCONTROLER.update);
+router.put("/:id", postsCONTROLLER.update);
 
 //MODIFY (parziale) 
-router.patch("/:id", postsCONTROLER.modify);
+router.patch("/:id", postsCONTROLLER.modify);
 
 
 //DESTROY
-router.delete("/:id", postsCONTROLER.destroy);
+router.delete("/:id", postsCONTROLLER.destroy);
 
 
 module.exports = router; //esportiamo le rotte affinchè siano richiamabili altrove (ex main.js)
