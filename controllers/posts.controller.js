@@ -71,7 +71,26 @@ const store = (req, res) => {
 
 
 const update = (req, res) => {
-    res.send("Update del post con id" + req.params.id)
+    // si recupera l'id dall'URL e lo si trasforma in numero
+    const id = parseInt(req.params.id);
+    // si cerca il post tramite id
+    const post = postsDATA.find(item => item.id === id);
+    if (!post) {
+        res.status(404) //404 significato: "pagina non trovata"
+        return res.json({
+            error: "Not Found",
+            message: "Post non trovato, i'm sorry! Re-TRY! :)"
+        })
+    }
+
+    //Aggiornamento del post 
+    post.titolo = req.body.titolo;
+    post.contenuto = req.body.contenuto;
+    post.immagine = req.body.immagine;
+    post.tags = req.body.tags;
+
+    console.log(postsDATA);
+    res.json(postsDATA);
 };
 
 
