@@ -6,6 +6,9 @@ const postsDATA = require("../data/posts.data"); //importiamo l'array di oggetti
 
 // creazione delle funzioni con la logica delle rotte 
 
+//========================================================================================================
+
+
 const index = (req, res) => {
     let filteredPOSTS = postsDATA;
     if (req.query.tags) {
@@ -16,6 +19,10 @@ const index = (req, res) => {
 
     //res.json(postsDATA) //restituisce in formato json l'array dei post 
 };
+
+
+//========================================================================================================
+
 
 const show = (req, res) => {
     const id = parseInt(req.params.id);
@@ -30,9 +37,13 @@ const show = (req, res) => {
     res.json(post);
 };
 
+
+//========================================================================================================
+
+
 const store = (req, res) => {
     //creiamo un nuovo ID incrementando l'ultimo ID disponibile
-    const newID = postsDATA[postsDATA.lenght - 1].id + 1;
+    const newID = postsDATA[postsDATA.length - 1].id + 1;
 
     //creiamo un nuovo oggetto POST
     const newPOST = {
@@ -55,13 +66,24 @@ const store = (req, res) => {
     res.json(newPOST); //restituisce il nuovo post in formato json 
 };
 
+
+//========================================================================================================
+
+
 const update = (req, res) => {
     res.send("Update del post con id" + req.params.id)
 };
 
+
+//========================================================================================================
+
 const modify = (req, res) => {
     res.send("Update del post con id" + req.params.id)
 };
+
+
+//========================================================================================================
+
 
 const destroy = (req, res) => {
     const id = parseInt(req.params.id);
