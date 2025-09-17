@@ -13,6 +13,8 @@ app.use(express.static("PUBLIC"));
 
 //importiamo le rotte (group routing ./ROUTER/POSTS )
 const postsROUTER = require("./ROUTER/posts");
+const ServerError = require("./middleware/servererror");
+const notFound = require("./middleware/notFound");
 //diciamo ad express dobbiamo usare le rotte 
 app.use("/posts", postsROUTER);
 
@@ -24,6 +26,7 @@ app.listen(port, () => { //ci mettiamo in ascolto sulla porta 3000
 })
 
 
-
+app.use(ServerError);
+app.use(notFound);
 
 
